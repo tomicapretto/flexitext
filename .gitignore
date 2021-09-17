@@ -1,1 +1,15 @@
+dist
+tags
+pytest.ini
+.cache
+.coverage
 .ipynb_checkpoints
+.vscode
+*.pyc
+*.so
+*.egg-info/
+*.zip
+*.nt.bz2
+*.tar.gz
+*.tgz
+*.orig
