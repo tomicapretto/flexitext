@@ -4,6 +4,7 @@ from matplotlib.offsetbox import AnnotationBbox, HPacker, TextArea, VPacker
 
 from flexitext.utils import multilinify, spacify
 
+
 class Style:
     def __init__(
         self,
@@ -14,7 +15,7 @@ class Style:
         name=None,
         size=None,
         style=None,
-        weight=None
+        weight=None,
     ):
         self.alpha = alpha
         self.backgroundcolor = backgroundcolor
@@ -63,7 +64,7 @@ class TextGrid:
             children = []
             for text in row:
                 children.append(TextArea(text.string, textprops=text.style.props))
-            childrens.append(HPacker(children=children, pad=0, sep=0))
+            childrens.append(HPacker(children=children, pad=0, sep=0, align="center"))
 
         return VPacker(children=childrens, pad=0, sep=0, align=align)
 
@@ -86,12 +87,21 @@ class TextGrid:
 class FlexiText:
 
     HORIZONTAL_ALIGNMENT = {"center": 0.5, "left": 0, "right": 1}
-    VERTICAL_ALIGNMENT = {"center": 0.5, "top": 1, "bottom": 1}
+    VERTICAL_ALIGNMENT = {"center": 0.5, "top": 1, "bottom": 0}
 
     def __init__(self, *texts):
         self.texts = texts
 
-    def plot(self, x, y, ha="left", va="center", ma="left", align="left", xycoords="axes fraction", ax=None):
+    def plot(
+        self,
+        x,
+        y,
+        ha="left",
+        va="center",
+        ma="left",
+        xycoords="axes fraction",
+        ax=None,
+    ):
 
         if ax is None:
             ax = plt.gca()
@@ -105,10 +115,14 @@ class FlexiText:
                 f"'xycoords' must be one of 'axes fraction' or 'figure fraction', not {xycoords}"
             )
 
-        offsetbox = self._make_offset_box(align)
+        offsetbox = self._make_offset_box(ma)
         box_alignment = self._make_box_alignment(ha, va)
         annotation_box = AnnotationBbox(
-            offsetbox, (x, y),  xycoords=xycoords, frameon=False, box_alignment=box_alignment,
+            offsetbox,
+            (x, y),
+            xycoords=xycoords,
+            frameon=False,
+            box_alignment=box_alignment,
             pad=0,
         )
 
