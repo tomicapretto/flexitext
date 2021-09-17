@@ -1,6 +1,8 @@
-from flexitext.utils import multilinify, spacify
+import matplotlib.pyplot as plt
 
 from matplotlib.offsetbox import AnnotationBbox, HPacker, TextArea, VPacker
+
+from flexitext.utils import multilinify, spacify
 
 class Style:
     def __init__(
@@ -68,7 +70,6 @@ class TextGrid:
     def _build_grid(self):
         row_n = sum([t.string.count("\n") for t in self.texts]) + 1
         grid = [[] for _ in range(row_n)]
-
         row_idx = 0
         for text in self.texts:
             strings = text.string.split("\n")
@@ -90,18 +91,29 @@ class FlexiText:
     def __init__(self, *texts):
         self.texts = texts
 
-    def plot(
-        self, x, y, ha="center", va="center", ma="left", align="left",
-        xycoords="axes fraction", ax=None
-    ):
+    def plot(self, x, y, ha="left", va="center", ma="left", align="left", xycoords="axes fraction", ax=None):
+
+        if ax is None:
+            ax = plt.gca()
+        if xycoords == "axes fraction":
+            parent = ax
+        elif xycoords == "figure fraction":
+            parent = ax.figure
+            xycoords = ax.figure.transFigure
+        else:
+            raise ValueError(
+                f"'xycoords' must be one of 'axes fraction' or 'figure fraction', not {xycoords}"
+            )
+
         offsetbox = self._make_offset_box(align)
         box_alignment = self._make_box_alignment(ha, va)
-
         annotation_box = AnnotationBbox(
-            offsetbox, (x, y),  xycoords=xycoords, frameon=False, box_alignment=box_alignment
+            offsetbox, (x, y),  xycoords=xycoords, frameon=False, box_alignment=box_alignment,
+            pad=0,
         )
-        ax.add_artist(annotation_box)
-        return ax
+
+        parent.add_artist(annotation_box)
+        return annotation_box
 
     def _make_box_alignment(self, ha, va):
         ha = self.HORIZONTAL_ALIGNMENT[ha]
