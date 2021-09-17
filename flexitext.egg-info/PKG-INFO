@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: flexitext
+Version: 0.0.1
+Summary: Add custom text to Matplotlib plots in a flexible way
+Home-page: https://github.com/tomicapretto/flexitext
+Author: Tomas Capretto
+Author-email: tomicapretto@gmail.com
+Maintainer: Tomas Capretto
+Maintainer-email: tomicapretto@gmail.com
+License: MIT
+Description: # Flexitext
+        
+Platform: UNKNOWN
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown

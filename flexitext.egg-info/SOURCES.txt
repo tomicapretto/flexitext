@@ -1,0 +1,14 @@
+MANIFEST.in
+README.md
+requirements.txt
+setup.cfg
+setup.py
+flexitext/__init__.py
+flexitext/flexitext.py
+flexitext/utils.py
+flexitext/version.py
+flexitext.egg-info/PKG-INFO
+flexitext.egg-info/SOURCES.txt
+flexitext.egg-info/dependency_links.txt
+flexitext.egg-info/requires.txt
+flexitext.egg-info/top_level.txt
