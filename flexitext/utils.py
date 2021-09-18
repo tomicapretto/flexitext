@@ -7,3 +7,10 @@ def multilinify(sequence, sep=","):
     """Make a multi-line string out of a sequence of strings."""
     sep += "\n"
     return "\n" + sep.join(sequence)
+
+
+def listify(obj):
+    if obj is None:
+        return []
+    else:
+        return obj if isinstance(obj, (list, tuple)) else [obj]

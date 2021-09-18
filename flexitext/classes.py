@@ -1,11 +1,3 @@
-import matplotlib.pyplot as plt
-
-from matplotlib.offsetbox import AnnotationBbox
-
-from flexitext.parser import make_texts
-from flexitext.textgrid import TextGrid
-
-
 class FlexiText:
 
     HORIZONTAL_ALIGNMENT = {"center": 0.5, "left": 0, "right": 1}
@@ -58,7 +50,3 @@ class FlexiText:
 
     def _make_offset_box(self, align):
         return TextGrid(*self.texts).build(align)
-
-
-def flexitext(x, y, s, ha="left", va="center", ma="left", xycoords="axes fraction", ax=None):
-    return FlexiText(*make_texts(s)).plot(x, y, ha, va, ma, xycoords, ax)
