@@ -29,7 +29,7 @@ setup(
     author=version_info["__author__"],
     author_email=version_info["__author_email__"],
     url="https://github.com/tomicapretto/flexitext",
-    description="Draw formatted text flexibly in Matplotlib",
+    description="Draw styled text in Matplotlib",
     long_description=get_long_description(),
     long_description_content_type="text/markdown",
     install_requires=get_requirements(),
