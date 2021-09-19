@@ -68,4 +68,5 @@ class BlockParser(Parser):
                 styles.remove(past_styles[depth].keys())
                 past_styles.pop(depth)
 
-        # TODO: Depth must be 0
+        if depth != 0:
+            raise ValueError("Are you missing a closing tag '</>'?")

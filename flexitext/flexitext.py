@@ -3,10 +3,18 @@ import matplotlib.pyplot as plt
 from matplotlib.offsetbox import AnnotationBbox
 
 from flexitext.parser import make_texts
-from flexitext.textgrid import TextGrid
+from flexitext.textgrid import make_text_grid
 
 
 class FlexiText:
+    """Handle storing and drawing of formatted text.
+
+    Parameters
+    ----------
+
+    texts: tuple of flexitext.Text instances
+        These objects represent the text together with their styles.
+    """
 
     HORIZONTAL_ALIGNMENT = {"center": 0.5, "left": 0, "right": 1}
     VERTICAL_ALIGNMENT = {"center": 0.5, "top": 1, "bottom": 0}
@@ -24,6 +32,34 @@ class FlexiText:
         xycoords="axes fraction",
         ax=None,
     ):
+        """Draw text with multiple formats.
+
+        Parameters
+        ----------
+        x: float
+            The horizontal position to place the text. By default, this is in axes fraction
+            coordinates.
+        y: float
+            The vertical position to place the text. By default, this is in axes fraction
+            coordinates.
+        ha: str
+            Horizontal alignment. Must be one of 'center', 'right', or 'left'. Defaults to 'left'.
+        va: str
+            Horizontal alignment. Must be one of 'center', 'top', or 'bottom'. Defaults to 'center'.
+        ma: str
+            Alignment for multiline texts. The layout of the bounding box of all the lines is
+            determined by the `ha` and `va` properties. This property controls the alignment of the
+            text lines within that box.
+        xycoords: str
+            The coordinate system for `x` and `y`.
+        ax: matplotlib.axis.Axis
+            Matplotlib axis object. Defaults to `None`, which means the Axis is obtained with
+            `plt.gca()`
+
+        Returns
+        -------
+        annotation_box: matplotlib.offsetbox.AnnotationBbox
+        """
 
         if ax is None:
             ax = plt.gca()
@@ -52,13 +88,45 @@ class FlexiText:
         return annotation_box
 
     def _make_box_alignment(self, ha, va):
+        """Convert ha and va to a touple of two numbers"""
         ha = self.HORIZONTAL_ALIGNMENT[ha]
         va = self.VERTICAL_ALIGNMENT[va]
         return (ha, va)
 
     def _make_offset_box(self, align):
-        return TextGrid(*self.texts).build(align)
+        """Create grid with formatted text"""
+        return make_text_grid(self.texts, align)
 
 
 def flexitext(x, y, s, ha="left", va="center", ma="left", xycoords="axes fraction", ax=None):
+    """Draw text with multiple formats.
+
+    Parameters
+    ----------
+    x: float
+        The horizontal position to place the text. By default, this is in axes fraction
+        coordinates.
+    y: float
+        The vertical position to place the text. By default, this is in axes fraction
+        coordinates.
+    s: str
+        The formatted text to draw.
+    ha: str
+        Horizontal alignment. Must be one of 'center', 'right', or 'left'. Defaults to 'left'.
+    va: str
+        Horizontal alignment. Must be one of 'center', 'top', or 'bottom'. Defaults to 'center'.
+    ma: str
+        Alignment for multiline texts. The layout of the bounding box of all the lines is
+        determined by the `ha` and `va` properties. This property controls the alignment of the
+        text lines within that box.
+    xycoords: str
+        The coordinate system for `x` and `y`.
+    ax: matplotlib.axis.Axis
+        Matplotlib axis object. Defaults to `None`, which means the Axis is obtained with
+        `plt.gca()`
+
+    Returns
+    -------
+    annotation_box: matplotlib.offsetbox.AnnotationBbox
+    """
     return FlexiText(*make_texts(s)).plot(x, y, ha, va, ma, xycoords, ax)

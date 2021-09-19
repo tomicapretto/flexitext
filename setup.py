@@ -29,7 +29,7 @@ setup(
     author=version_info["__author__"],
     author_email=version_info["__author_email__"],
     url="https://github.com/tomicapretto/flexitext",
-    description="Add custom text to Matplotlib plots in a flexible way",
+    description="Draw formatted text flexibly in Matplotlib",
     long_description=get_long_description(),
     long_description_content_type="text/markdown",
     install_requires=get_requirements(),
@@ -37,5 +37,5 @@ setup(
     maintainer_email=version_info["__author_email__"],
     packages=find_packages(),
     license="MIT",
-     python_requires=">=3.6",
+    python_requires=">=3.6",
 )

@@ -3,6 +3,15 @@ from flexitext.text import Text
 
 
 class Style:
+    """Style container
+
+    Stores values for the styles that can be applied to texts.
+
+    Examples
+    --------
+    >>> style = Style(color='blue', size=18, alpha=0.6)
+    >>> text = style("This is blue text")
+    """
     def __init__(
         self,
         alpha=None,
@@ -28,6 +37,7 @@ class Style:
         return {k: v for k, v in self.__dict__.items() if v is not None}
 
     def __call__(self, string):
+        """Return a Text instance using styles from this object."""
         return Text(string, self)
 
     def __repr__(self):

@@ -1,4 +1,5 @@
 class Text:
+    """Stores content and styles for a formatted text."""
     def __init__(self, string, style=None):
         self.string = string
         self.style = style
