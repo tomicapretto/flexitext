@@ -10,6 +10,7 @@ def multilinify(sequence, sep=","):
 
 
 def listify(obj):
+    """Convert non-list objects to lists."""
     if obj is None:
         return []
     else:

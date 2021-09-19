@@ -33,13 +33,15 @@ class BlockScanner(Scanner):
 
     def content(self):
         while not self.at_end():
-            self.advance()
             if self.peek() == "<":
                 self.add_token("CONTENT")
                 self.start = self.current
                 self.current += 1
                 self.style()
                 return
+            else:
+                self.advance()
+
         self.add_token("CONTENT")
 
 

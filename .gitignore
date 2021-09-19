@@ -13,3 +13,5 @@ pytest.ini
 *.tar.gz
 *.tgz
 *.orig
+docsite/docs/*.ipynb
+docsite/docs/.ipynb_checkpoints
