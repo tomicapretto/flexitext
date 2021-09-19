@@ -5,7 +5,11 @@ Flexitext is a Python library that makes it easier to draw text with multiple st
 
 ## Installation
 
-Flexitext requires a working Python interpreter (3.6+). This library is not available on PyPI yet, but you can install it from GitHub:
+Flexitext requires a working Python interpreter (3.6+). This library can be installed using pip:
+
+    pip install flexitext
+
+Alternatively, you can install the development version from GitHub:
 
     pip install git+https://github.com/tomicapretto/flexitext.git
 

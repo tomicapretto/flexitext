@@ -15,5 +15,5 @@ pytest.ini
 *.orig
 docsite/docs/*.ipynb
 docsite/docs/.ipynb_checkpoints
-
+build/
 README.ipynb
