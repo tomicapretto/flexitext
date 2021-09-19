@@ -6,9 +6,6 @@ class ScanError(Exception):
 
 
 class ArgScanner(Scanner):
-    def __init__(self, text):
-        super().__init__(text)
-
     def scan_token(self):
         char = self.advance()
         if char in [" ", "\n", "\t", "\r"]:
@@ -62,9 +59,6 @@ class ArgScanner(Scanner):
 
 
 class ArgParser(Parser):
-    def __init__(self, tokens):
-        super().__init__(tokens)
-
     def parse(self):
         pairs = []
         while True:

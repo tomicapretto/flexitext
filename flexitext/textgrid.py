@@ -2,6 +2,7 @@ from matplotlib.offsetbox import HPacker, TextArea, VPacker
 
 from flexitext.text import Text
 
+
 def make_grid(texts):
     """Create a grid layout with styled texts.
 
@@ -26,6 +27,7 @@ def make_grid(texts):
         else:
             grid[row_idx].append(text)
     return grid
+
 
 def make_text_grid(texts, align="left"):
     """Create a grid layout with the styled texts to draw.

@@ -1,15 +1,12 @@
+from flexitext.text import Text
+from flexitext.style import Style
+
 from .args import get_style_args
 from .classes import Parser, Scanner
 from .utils import StylesQueue
 
-from flexitext.text import Text
-from flexitext.style import Style
-
 
 class BlockScanner(Scanner):
-    def __init__(self, text):
-        super().__init__(text)
-
     def scan_token(self):
         char = self.advance()
         if char == "<":

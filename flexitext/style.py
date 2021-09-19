@@ -12,6 +12,7 @@ class Style:
     >>> style = Style(color='blue', size=18, alpha=0.6)
     >>> text = style("This is blue text")
     """
+
     def __init__(
         self,
         alpha=None,

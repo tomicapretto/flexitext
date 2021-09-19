@@ -35,3 +35,6 @@ class Scanner:
             self.scan_token()
         self.tokens.append(Token("EOF", ""))
         return self
+
+    def scan_token(self):
+        return None
