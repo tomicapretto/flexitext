@@ -1,4 +1,4 @@
-# Flexitext: Draw styled text in Matplotlib
+<img src="docsite/docs/logo.png" width=360></img>
 
 Flexitext is a Python library that makes it easier to draw text with multiple styles in Matplotlib. This library is inspired and influenced by the R package [`ggtext`](https://wilkelab.org/ggtext/).
 
@@ -148,3 +148,5 @@ Flexitext only supports the following styles
 * weight
 
 See [Matplotlib's documentation](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.text.html#matplotlib.axes.Axes.text) for more information about their meaning and available values.
+
+Flexitext logo is created with Flexitext and Matplotlib (see [here](https://github.com/tomicapretto/flexitext/tree/main/docsite/docs/logo.ipynb)).
