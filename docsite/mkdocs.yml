@@ -1,0 +1,20 @@
+site_name: Flexitext
+site_url: https://example.com/
+nav:
+  - Overview:
+      - Introduction: index.md
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.top
+    - navigation.tracking
+  logo: assets/images/logo.svg
+extra_css:
+  - assets/stylesheets/extra.css
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - pymdownx.highlight
+  - pymdownx.superfences
