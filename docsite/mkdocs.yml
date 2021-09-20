@@ -5,10 +5,12 @@ nav:
   - Usage:
       - Functional
       - OOP
+repo_url: https://github.com/tomicapretto/flexitext
+repo_name: tomicapretto/flexitext
 theme:
   name: material
   palette:
-    primary: teal
+    accent: blue
   features:
     - navigation.tabs
     - navigation.top
