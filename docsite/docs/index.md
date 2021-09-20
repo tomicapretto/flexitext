@@ -2,6 +2,7 @@
 
 Flexitext is a Python library that makes it easier to draw text with multiple styles in Matplotlib. This library is inspired and influenced by the R package [`ggtext`](https://wilkelab.org/ggtext/).
 
+
 ## Installation
 
 Flexitext requires a working Python interpreter (3.6+). This library can be installed using pip:
@@ -12,9 +13,11 @@ Alternatively, you can install the development version from GitHub:
 
     pip install git+https://github.com/tomicapretto/flexitext.git
 
+
 ### Dependencies
 
 Flexitext only requires Matplotlib version 3.4 or higher.
+
 
 ## Introduction
 
@@ -26,9 +29,11 @@ Flexitext does not use HTML, CSS, or Markdown to specify text styles. It impleme
 
 `<color:blue, size:16>` is the opening tag, with styles separated by a comma, `This is blue text` is the text to be drawn, and `</>` is the closing tag.
 
+
 ### Examples
 
 The easiest way to use `flexitext` is through the `flexitext` function.
+
 
 ```python
 import matplotlib as mpl
@@ -38,6 +43,7 @@ from flexitext import flexitext
 
 mpl.rcParams['figure.facecolor'] = 'w'
 ```
+
 
 ```python
 fig, ax = plt.subplots(figsize=(9, 6))
@@ -55,9 +61,14 @@ text = "<weight:bold, size:24>Bold and</> <style:italic, size:24>italic too!</>"
 flexitext(0.5, 0.4, text, ha="center");
 ```
 
-![png](README_files/README_2_0.png)
+
+    
+![png](index_files/index_2_0.png)
+    
+
 
 Styles can be nested
+
 
 ```python
 fig, ax = plt.subplots(figsize=(9, 6))
@@ -66,9 +77,14 @@ text = "<size:28, color:royalblue>It is much <weight:bold>easier </><style:itali
 flexitext(0.5, 0.6, text, ha="center");
 ```
 
-![png](README_files/README_4_0.png)
+
+    
+![png](index_files/index_4_0.png)
+    
+
 
 A more convoluted example:
+
 
 ```python
 text = (
@@ -82,9 +98,14 @@ fig, ax = plt.subplots(figsize=(9, 6))
 flexitext(0.5, 0.5, text, ha="center", ma="center");
 ```
 
-![png](README_files/README_6_0.png)
+
+    
+![png](index_files/index_6_0.png)
+    
+
 
 Use the figure fraction coordinates to write a formatted title.
+
 
 ```python
 fig, ax = plt.subplots(figsize=(9, 6))
@@ -107,20 +128,24 @@ text = (
 flexitext(0.025, 0.8, text, va="bottom", xycoords="figure fraction");
 ```
 
-![png](README_files/README_8_0.png)
+
+    
+![png](index_files/index_8_0.png)
+    
+
 
 ## Notes
 
 Flexitext only supports the following styles
 
-- alpha
-- backgroundcolor
-- color
-- family
-- name
-- size
-- style
-- weight
+* alpha
+* backgroundcolor
+* color
+* family
+* name
+* size
+* style
+* weight
 
 See [Matplotlib's documentation](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.text.html#matplotlib.axes.Axes.text) for more information about their meaning and available values.
 
