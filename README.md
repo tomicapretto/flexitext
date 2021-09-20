@@ -36,9 +36,12 @@ The easiest way to use `flexitext` is through the `flexitext` function.
 
 
 ```python
+import matplotlib as mpl
 import matplotlib.pyplot as plt
 
 from flexitext import flexitext
+
+mpl.rcParams['figure.facecolor'] = 'w'
 ```
 
 
@@ -144,4 +147,4 @@ Flexitext only supports the following styles
 * style
 * weight
 
-See [Matplotlib's documentation](https://matplotlib.org/stable/tutorials/text/text_intro.html) for more information about their meaning and available values.
+See [Matplotlib's documentation](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.text.html#matplotlib.axes.Axes.text) for more information about their meaning and available values.
