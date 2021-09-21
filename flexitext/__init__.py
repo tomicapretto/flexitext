@@ -4,4 +4,4 @@ from .style import Style
 
 from .version import __version__
 
-__all__ = ["FlexiText", "Style", "flexitext"]
+__all__ = ["flexitext", "FlexiText", "Style"]

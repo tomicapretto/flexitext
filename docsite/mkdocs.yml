@@ -6,6 +6,11 @@ nav:
   - Usage:
       - Functional: usage/functional.md
       - OOP: usage/OOP.md
+  - Reference:
+      - flexitext: reference/flexitext.md
+      - FlexiText: reference/FlexiText.md
+      - Style: reference/Style.md
+      - Text: reference/Text.md
 theme:
   name: material
   palette:
@@ -17,12 +22,16 @@ theme:
     - toc.integrate
 extra_css:
   - assets/stylesheets/colors.css
-extra:
-  version:
-    provider: mike
 markdown_extensions:
   - admonition
   - toc:
       permalink: true
   - pymdownx.highlight
   - pymdownx.superfences
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          selection:
+            docstring_style: numpy # then add pytkdocs[numpy-style] dependency
