@@ -1,8 +1,9 @@
 <img class="logo" src="https://raw.githubusercontent.com/tomicapretto/flexitext/main/docsite/logo.png"/>
 
 [![PyPI - Version](https://img.shields.io/pypi/v/flexitext.svg)](https://pypi.org/project/flexitext/)
+[![Build Status](https://github.com/tomicapretto/flexitext/actions/workflows/tests.yml/badge.svg)](https://github.com/tomicapretto/flexitext/actions/workflows/tests.yml)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
-
+[![codecov](https://codecov.io/gh/tomicapretto/flexitext/branch/main/graph/badge.svg?token=ZqH0KCLKAE)](https://codecov.io/gh/tomicapretto/flexitext)
 
 # Introduction
 
@@ -25,13 +26,23 @@ Flexitext only requires Matplotlib version 3.4 or higher.
 
 ## Overview
 
-Flexitext does not use HTML, CSS, or Markdown to specify text styles. It implements a tag based styling very similar to HTML tags. A styled text consists of an opening tag that defines the styles to apply, the text block, and a closing tag. For example:
+Albeit being inspired on [ggtext](https://wilkelab.org/ggtext/), Flexitext does not use HTML, CSS, or Markdown to specify text styles. On the contrary, it implements a tag-based styling that looks similar to HTML tags, but is not exactly like HTML. These formatted strings consist of three components:
+
+* An opening tag that defines the styles to apply.
+* The text to be styled.
+* A closing tag, indicating the extent to which the styles in the opening tag apply.
+
+Let's see an example:
 
 ```python
-"<color:blue, size:16>This is blue text</>"
+"<color:blue, size:16>This is blue text</> and this is regular text"
 ```
 
-`<color:blue, size:16>` is the opening tag, with styles separated by a comma, `This is blue text` is the text to be drawn, and `</>` is the closing tag.
+* <code>&lt;color:blue, size:16></code> is the opening tag. Styles are key-value pairs separated by `:`. Multiple styles are separated by commas.
+* `This is blue text` is the text block. This text is going to be drawn using a font size of 16 and blue color.
+* <code>&lt;/></code> is the closing tag. Only the text within the opening and the closing tags is formatted.
+
+And finally we have ` and this is regular text`. This is going to be drawn using the default style because it is not contained within any formatting tags.
 
 
 ## Examples
