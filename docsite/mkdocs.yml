@@ -4,6 +4,7 @@ repo_name: tomicapretto/flexitext
 nav:
   - Introduction: index.md
   - Usage:
+      - Overview: usage/index.md
       - Functional: usage/functional.md
       - OOP: usage/OOP.md
   - Reference:
