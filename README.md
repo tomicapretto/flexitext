@@ -1,3 +1,5 @@
+<img src="https://raw.githubusercontent.com/tomicapretto/flexitext/main/docsite/logo.png" style="max-width:420px"/>
+
 [![PyPI - Version](https://img.shields.io/pypi/v/flexitext.svg)](https://pypi.org/project/flexitext/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
 
