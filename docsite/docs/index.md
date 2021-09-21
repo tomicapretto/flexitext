@@ -1,4 +1,4 @@
-<img src="https://github.com/tomicapretto/flexitext/blob/main/docsite/logo.png" width=360></img>
+<img src="https://raw.githubusercontent.com/tomicapretto/flexitext/main/docsite/logo.png" width=360></img>
 
 Flexitext is a Python library that makes it easier to draw text with multiple styles in Matplotlib. This library is inspired and influenced by the R package [`ggtext`](https://wilkelab.org/ggtext/).
 
