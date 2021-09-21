@@ -1,4 +1,4 @@
-# Functional
+# Functional interface
 
 Flexitext provides the `flexitext()` function. With the exception of the formatted strings, it works in the same way than the `.text()` method on Matplotlib's `Axes` objects. You can see its full documentation [here](../../reference/flexitext).
 
@@ -29,9 +29,9 @@ Let's see an example:
 "<color:blue, size:16>This is blue text</> and this is regular text"
 ```
 
-* `<color:blue, size:16>` is the opening tag. Styles are key-value pairs separated by `:`. Multiple styles are separated by commas.
+* <code>&lt;color:blue, size:16></code> is the opening tag. Styles are key-value pairs separated by `:`. Multiple styles are separated by commas.
 * `This is blue text` is the text block. This text is going to be drawn using a font size of 16 and blue color.
-* `</>` is the closing tag. Only the text within the opening and the closing tags is formatted.
+* <code>&lt;/></code> is the closing tag. Only the text within the opening and the closing tags is formatted.
 
 And finally we have ` and this is regular text`. This is going to be drawn using the default style because it is not contained within any formatting tags.
 
