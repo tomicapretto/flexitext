@@ -21,7 +21,7 @@ class ArgScanner(Scanner):
             self.add_token("COLON")
         elif char.isdigit():
             self.number()
-        elif char.isalpha():
+        elif char.isalpha() or char in ["#"]:
             self.identifier()
         else:
             raise ScanError(f"Unexpected character: {char}")
