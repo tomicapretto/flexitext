@@ -1,1 +1,1 @@
-::: flexitext.FlexiText
+::: flexitext.flexitext.FlexiText
