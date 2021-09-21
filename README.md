@@ -1,7 +1,7 @@
 <img src="https://raw.githubusercontent.com/tomicapretto/flexitext/main/docsite/logo.png" width=420/>
 
 [![PyPI - Version](https://img.shields.io/pypi/v/flexitext.svg)](https://pypi.org/project/flexitext/)
-[![Build Status](https://github.com/tomicapretto/flexitext/actions/workflows/test.yml/badge.svg)](https://github.com/tomicapretto/flexitext/actions/workflows/test.yml)
+[![Build Status](https://github.com/tomicapretto/flexitext/actions/workflows/tests.yml/badge.svg)](https://github.com/tomicapretto/flexitext/actions/workflows/tests.yml)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
 [![codecov](https://codecov.io/gh/tomicapretto/flexitext/branch/main/graph/badge.svg?token=ZqH0KCLKAE)](https://codecov.io/gh/tomicapretto/flexitext)
 
