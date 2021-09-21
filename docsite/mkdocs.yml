@@ -1,12 +1,11 @@
 site_name: Flexitext
-site_url: https://example.com/
+repo_url: https://github.com/tomicapretto/flexitext
+repo_name: tomicapretto/flexitext
 nav:
   - Introduction: index.md
   - Usage:
-      - Functional
-      - OOP
-repo_url: https://github.com/tomicapretto/flexitext
-repo_name: tomicapretto/flexitext
+      - Functional: usage/functional.md
+      - OOP: usage/OOP.md
 theme:
   name: material
   palette:
@@ -15,9 +14,12 @@ theme:
     - navigation.tabs
     - navigation.top
     - navigation.tracking
-  #logo: assets/logo.png
+    - toc.integrate
 extra_css:
   - assets/stylesheets/colors.css
+extra:
+  version:
+    provider: mike
 markdown_extensions:
   - admonition
   - toc:

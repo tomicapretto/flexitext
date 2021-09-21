@@ -1,4 +1,10 @@
-<img src="https://raw.githubusercontent.com/tomicapretto/flexitext/main/docsite/logo.png" width=360></img>
+<img src="https://raw.githubusercontent.com/tomicapretto/flexitext/main/docsite/logo.png" style="max-width: 420px"/>
+
+[![PyPI - Version](https://img.shields.io/pypi/v/flexitext.svg)](https://pypi.org/project/flexitext/)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
+
+
+# Introduction
 
 Flexitext is a Python library that makes it easier to draw text with multiple styles in Matplotlib. This library is inspired and influenced by the R package [`ggtext`](https://wilkelab.org/ggtext/).
 
@@ -14,12 +20,10 @@ Alternatively, you can install the development version from GitHub:
     pip install git+https://github.com/tomicapretto/flexitext.git
 
 
-### Dependencies
-
 Flexitext only requires Matplotlib version 3.4 or higher.
 
 
-## Introduction
+## Overview
 
 Flexitext does not use HTML, CSS, or Markdown to specify text styles. It implements a tag based styling very similar to HTML tags. A styled text consists of an opening tag that defines the styles to apply, the text block, and a closing tag. For example:
 
@@ -30,7 +34,7 @@ Flexitext does not use HTML, CSS, or Markdown to specify text styles. It impleme
 `<color:blue, size:16>` is the opening tag, with styles separated by a comma, `This is blue text` is the text to be drawn, and `</>` is the closing tag.
 
 
-### Examples
+## Examples
 
 The easiest way to use `flexitext` is through the `flexitext` function.
 
