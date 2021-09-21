@@ -37,6 +37,11 @@ class Style:
     def props(self):
         return {k: v for k, v in self.__dict__.items() if v is not None}
 
+    def __eq__(self, other):
+        if not isinstance(other, type(self)):
+            return False
+        return self.__dict__ == other.__dict__
+
     def __call__(self, string):
         """Return a Text instance using styles from this object."""
         return Text(string, self)

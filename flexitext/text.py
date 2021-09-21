@@ -7,3 +7,8 @@ class Text:
 
     def __repr__(self):
         return self.string
+
+    def __eq__(self, other):
+        if not isinstance(other, type(self)):
+            return False
+        return self.string == other.string and self.style == other.style
