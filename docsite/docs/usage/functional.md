@@ -17,30 +17,30 @@ mpl.rcParams["figure.dpi"] = 120
 
 ## Formatted strings
 
-Albeit being inspired on [ggtext](https://wilkelab.org/ggtext/), Flexitext does not use HTML, CSS, or Markdown to specify text styles. On the contrary, it implements a tag-based styling that looks similar to HTML tags, but is not exactly like HTML. In Flexitext, formatted text consists of three components:
+Albeit being inspired on [ggtext](https://wilkelab.org/ggtext/), Flexitext does not use HTML, CSS, or Markdown to specify text styles. On the contrary, it implements a tag-based styling that looks similar to HTML tags, but is not exactly like HTML. These formatted strings consist of three components:
 
 * An opening tag that defines the styles to apply.
 * The text to be styled.
 * A closing tag, indicating the extent to which the styles in the opening tag apply.
 
-Let's see an example
+Let's see an example:
 
 ```python
 "<color:blue, size:16>This is blue text</> and this is regular text"
 ```
 
-* `<color:blue, size:16>` is the opening tag. Styles are key-value pairs separated by `:`. Multiple styles are separated by commas `,`.
-* `This is blue text` is the text block. This text is going to drawn using a font size of 16 and a blue color.
+* `<color:blue, size:16>` is the opening tag. Styles are key-value pairs separated by `:`. Multiple styles are separated by commas.
+* `This is blue text` is the text block. This text is going to be drawn using a font size of 16 and blue color.
 * `</>` is the closing tag. Only the text within the opening and the closing tags is formatted.
 
-Then we have ` and this is regular text`. This is going to be drawn using the default style because it is not contained within any formatting tags.
+And finally we have ` and this is regular text`. This is going to be drawn using the default style because it is not contained within any formatting tags.
 
 
 ```python
 fig, ax = plt.subplots()
 
 text = "<color:blue, size:16>This is blue text</> and this is regular text"
-flexitext(0.15, 0.5, text);
+flexitext(0.5, 0.5, text, ha="center");
 ```
 
 
@@ -49,14 +49,41 @@ flexitext(0.15, 0.5, text);
     
 
 
-## Examples
-
-Flexitext supports [a variety](https://tomicapretto.github.io/flexitext/#notes) of styles. You can change color, transparency, font, style, weight, etc. The following examples showcase how to customize text in different ways using `flexitext()` and formatted strings.
+Additionally, styles can be nested. If you define a styled block within the text component of an other styled block, the inner is formatted according to the combination of both styles. For example:
 
 
 ```python
-colors = ["#ff5c67", "#fe7974", "#ffb382", "#c5e099", "#64a5ff"]
+fig, ax = plt.subplots()
+
+text = "<color:blue, size:16>Everything is blue, but <weight:bold>this is also bold</></>"
+flexitext(0.5, 0.5, text, ha="center");
 ```
+
+
+    
+![png](functional_files/functional_5_0.png)
+    
+
+
+Notice the innermost style overrides settings from the outer one.
+
+
+```python
+fig, ax = plt.subplots()
+
+text = "<color:blue, weight:bold>Everything is bold, <color:red>but this is red</></>"
+flexitext(0.5, 0.5, text, ha="center");
+```
+
+
+    
+![png](functional_files/functional_7_0.png)
+    
+
+
+## More examples
+
+Flexitext supports [a variety](https://tomicapretto.github.io/flexitext/#notes) of styles. You can change color, transparency, font, style, weight, etc. The following examples showcase how to customize text in different ways using `flexitext()` and formatted strings.
 
 
 ```python
@@ -88,7 +115,7 @@ flexitext(
 
 text = (
     "<size:18, name:Lobster Two>Align text as "
-    + "<color:#c5e099, weight:bold, name:Special Elite>usual</></>"
+    + "<color:#ffb382, weight:bold, name:Special Elite>usual</></>"
 )
 
 flexitext(
@@ -101,7 +128,7 @@ flexitext(
 
 
     
-![png](functional_files/functional_6_0.png)
+![png](functional_files/functional_9_0.png)
     
 
 
@@ -152,6 +179,6 @@ flexitext(1, 0, text, ha="right", ma="right", va="bottom");
 
 
     
-![png](functional_files/functional_7_0.png)
+![png](functional_files/functional_10_0.png)
     
 

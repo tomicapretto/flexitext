@@ -12,7 +12,7 @@ class FlexiText:
     Parameters
     ----------
 
-    texts: tuple of flexitext.Text instances
+    texts: tuple or list of flexitext.Text instances
         These objects represent the text together with their styles.
     """
 
@@ -43,18 +43,18 @@ class FlexiText:
             The vertical position to place the text. By default, this is in axes fraction
             coordinates.
         ha: str
-            Horizontal alignment. Must be one of 'center', 'right', or 'left'. Defaults to 'left'.
+            Horizontal alignment. Must be one of `'center'`, `'right'`, or `'left'`.
         va: str
-            Horizontal alignment. Must be one of 'center', 'top', or 'bottom'. Defaults to 'center'.
+            Horizontal alignment. Must be one of `'center'`, `'top'`, or `'bottom'`.
         ma: str
             Alignment for multiline texts. The layout of the bounding box of all the lines is
             determined by the `ha` and `va` properties. This property controls the alignment of the
             text lines within that box.
         xycoords: str
-            The coordinate system for `x` and `y`.
-        ax: matplotlib.axis.Axis
-            Matplotlib axis object. Defaults to `None`, which means the Axis is obtained with
-            `plt.gca()`
+            The coordinate system for `x` and `y`. Must be one of `'axes fraction'` or
+            `'figure fraction'`.
+        ax: matplotlib.axes.Axes
+            Matplotlib `Axes`. The default value means the `Axes` is obtained with `plt.gca()`
 
         Returns
         -------
@@ -109,21 +109,19 @@ def flexitext(x, y, s, ha="left", va="center", ma="left", xycoords="axes fractio
     y: float
         The vertical position to place the text. By default, this is in axes fraction
         coordinates.
-    s: str
-        The formatted text to draw.
     ha: str
-        Horizontal alignment. Must be one of 'center', 'right', or 'left'. Defaults to 'left'.
+        Horizontal alignment. Must be one of 'center', 'right', or 'left'.
     va: str
-        Horizontal alignment. Must be one of 'center', 'top', or 'bottom'. Defaults to 'center'.
+        Horizontal alignment. Must be one of 'center', 'top', or 'bottom'.
     ma: str
         Alignment for multiline texts. The layout of the bounding box of all the lines is
         determined by the `ha` and `va` properties. This property controls the alignment of the
         text lines within that box.
     xycoords: str
-        The coordinate system for `x` and `y`.
-    ax: matplotlib.axis.Axis
-        Matplotlib axis object. Defaults to `None`, which means the Axis is obtained with
-        `plt.gca()`
+        The coordinate system for `x` and `y`. Must be one of `'axes fraction'` or
+        `'figure fraction'`.
+    ax: matplotlib.axes.Axes
+        Matplotlib `Axes`. The default value means the `Axes` is obtained with `plt.gca()`
 
     Returns
     -------
