@@ -104,9 +104,9 @@ A more convoluted example:
 ```python
 text = (
     "<size:28, color:blueviolet, name:Montserrat>You can write using\n</>"
-    + "<color:grey, size:24>multiple formats,\nand linebreaks\n\n"
-    + "<color:royalblue, name:Montserrat>also <weight:bold>bold text\n\n</></>"
-    + "<name:Montserrat>and why not <color:royalblue, style:italic>italics</> too</></>"
+    "<color:grey, size:24>multiple formats,\nand linebreaks\n\n"
+    "<color:royalblue, name:Montserrat>also <weight:bold>bold text\n\n</></>"
+    "<name:Montserrat>and why not <color:royalblue, style:italic>italics</> too</></>"
 )
 
 fig, ax = plt.subplots(figsize=(9, 6))
@@ -137,8 +137,8 @@ ax.scatter(x, y_red, color="crimson", s=120)
 # Add flexitext
 text = (
     "<name:Montserrat><size:24>A <weight:bold>great chart</> showing</>\n"
-    + "<size:18>the values for the "
-    + "<color:royalblue, weight:bold>blues</> and the <color:crimson, weight:bold>reds</></></>"
+    "<size:18>the values for the "
+    "<color:royalblue, weight:bold>blues</> and the <color:crimson, weight:bold>reds</></></>"
 )
 flexitext(0.025, 0.8, text, va="bottom", xycoords="figure fraction");
 ```

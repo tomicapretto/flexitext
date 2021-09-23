@@ -106,9 +106,9 @@ A more convoluted example:
 ```python
 text = (
     "<size:28, color:blueviolet, name:Montserrat>You can write using\n</>"
-    + "<color:grey, size:24>multiple formats,\nand linebreaks\n\n"
-    + "<color:royalblue, name:Montserrat>also <weight:bold>bold text\n\n</></>"
-    + "<name:Montserrat>and why not <color:royalblue, style:italic>italics</> too</></>"
+    "<color:grey, size:24>multiple formats,\nand linebreaks\n\n"
+    "<color:royalblue, name:Montserrat>also <weight:bold>bold text\n\n</></>"
+    "<name:Montserrat>and why not <color:royalblue, style:italic>italics</> too</></>"
 )
 
 fig, ax = plt.subplots(figsize=(9, 6))
@@ -139,8 +139,8 @@ ax.scatter(x, y_red, color="crimson", s=120)
 # Add flexitext
 text = (
     "<name:Montserrat><size:24>A <weight:bold>great chart</> showing</>\n"
-    + "<size:18>the values for the "
-    + "<color:royalblue, weight:bold>blues</> and the <color:crimson, weight:bold>reds</></></>"
+    "<size:18>the values for the "
+    "<color:royalblue, weight:bold>blues</> and the <color:crimson, weight:bold>reds</></></>"
 )
 flexitext(0.025, 0.8, text, va="bottom", xycoords="figure fraction");
 ```
@@ -167,8 +167,3 @@ Flexitext only supports the following styles
 See [Matplotlib's documentation](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.text.html#matplotlib.axes.Axes.text) for more information about their meaning and available values.
 
 Flexitext logo is created with Flexitext and Matplotlib (see [here](https://github.com/tomicapretto/flexitext/tree/main/docsite/logo.ipynb)).
-
-
-## Related work
-
-* [highlight_text](https://github.com/znstrider/highlight_text): Flexitext and highlight_text have similar goals. This library, highlight_text, allows you to customize more aspects of the highlighted text, such as the bounding box of the text or the border of the text with path effects. On the other hand, it requires you to pass a styles as a separated list of dictionaries instead of within the text. 

@@ -102,8 +102,8 @@ flexitext(
 
 text = (
     "<size:12, name:Lato>Use breaklines\n"
-    + "and make text\n<size:36>BIGGER</>\n"
-    + "<size:12>and also smaller</></>"
+    "and make text\n<size:36>BIGGER</>\n"
+    "<size:12>and also smaller</></>"
 )
 
 flexitext(
@@ -115,7 +115,7 @@ flexitext(
 
 text = (
     "<size:18, name:Lobster Two>Align text as "
-    + "<color:#ffb382, weight:bold, name:Special Elite>usual</></>"
+    "<color:#ffb382, weight:bold, name:Special Elite>usual</></>"
 )
 
 flexitext(
