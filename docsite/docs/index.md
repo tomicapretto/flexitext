@@ -165,3 +165,7 @@ Flexitext only supports the following styles
 See [Matplotlib's documentation](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.text.html#matplotlib.axes.Axes.text) for more information about their meaning and available values.
 
 Flexitext logo is created with Flexitext and Matplotlib (see [here](https://github.com/tomicapretto/flexitext/tree/main/docsite/logo.ipynb)).
+
+## Related work
+
+* [highlight_text](https://github.com/znstrider/highlight_text): Flexitext and highlight_text have similar goals. This library, highlight_text, allows you to customize more aspects of the highlighted text, such as the bounding box of the text or the border of the text with path effects. On the other hand, it requires you to pass a styles as a separated list of dictionaries instead of within the text. 
