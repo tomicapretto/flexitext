@@ -46,7 +46,7 @@ def make_text_grid(texts, ha="left", va="baseline"):
     va: str
         Vertical alignment for multiline texts within the text area. This alignment is applied
         to `HPacker`. Can be one of `"top"`, `"bottom"`, `"left"`, `"right"`, `"center"`, or
-        `"baseline"`. Defaults to `"baseline"`
+        `"baseline"`. Defaults to `"baseline"`.
 
     Returns
     -------

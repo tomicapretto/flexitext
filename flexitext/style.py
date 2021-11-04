@@ -17,6 +17,7 @@ class Style:
         self,
         alpha=None,
         backgroundcolor=None,
+        bbox=None,
         color=None,
         family=None,
         name=None,
@@ -25,6 +26,7 @@ class Style:
         weight=None,
     ):
         self.alpha = alpha
+        self.bbox = bbox
         self.backgroundcolor = backgroundcolor
         self.color = color
         self.family = family
@@ -33,9 +35,22 @@ class Style:
         self.style = style
         self.weight = weight
 
+        self._backgroundcolor = None
+
     @property
     def props(self):
         return {k: v for k, v in self.__dict__.items() if v is not None}
+
+    # Kid of hacky, but at least it works.
+    @property
+    def backgroundcolor(self):
+        return self._backgroundcolor
+
+    @backgroundcolor.setter
+    def backgroundcolor(self, value):
+        self._backgroundcolor = None
+        if value:
+            self.bbox = {"pad": 0.5, "lw": 0, "fc": value}
 
     def __eq__(self, other):
         if not isinstance(other, type(self)):

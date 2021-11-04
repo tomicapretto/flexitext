@@ -124,7 +124,8 @@ def flexitext(
         determined by the `ha` and `va` properties. This property controls the alignment of the
         text lines within that box.
     mva: str
-        Vertical alignment for lines within multiline texts. Defaults to `"baseline"`.
+        Vertical alignment for text within multiline texts. Can be one of `"top"`, `"bottom"`,
+        `"left"`, `"right"`, `"center"`, or `"baseline"`. Defaults to `"baseline"`.
     xycoords: str
         The coordinate system for `x` and `y`. Must be one of `'axes fraction'` or
         `'figure fraction'`.
