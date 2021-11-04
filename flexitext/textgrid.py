@@ -29,7 +29,7 @@ def make_grid(texts):
     return grid
 
 
-def make_text_grid(texts, align="left"):
+def make_text_grid(texts, ha="left", va="baseline"):
     """Create a grid layout with the styled texts to draw.
 
     This function is used internally by the `FlexiText` class. The output can be drawn in
@@ -39,8 +39,14 @@ def make_text_grid(texts, align="left"):
     ----------
     texts: tuple of flexitext.Text instances
         These objects represent the text together with their styles.
-    align: str
-        Alignment for multiline texts. This alignment is applied to the `VPacker` instance.
+    ha: str
+        Horizontal alignment for multiline texts. This alignment is applied to the `VPacker`
+        instance. Can be one of `"top"`, `"bottom"`, `"left"`, `"right"`, `"center"`, or
+        `"baseline"`. Defaults to `"left"`
+    va: str
+        Vertical alignment for multiline texts within the text area. This alignment is applied
+        to `HPacker`. Can be one of `"top"`, `"bottom"`, `"left"`, `"right"`, `"center"`, or
+        `"baseline"`. Defaults to `"baseline"`
 
     Returns
     -------
@@ -52,7 +58,7 @@ def make_text_grid(texts, align="left"):
         children = []
         for text in row:
             children.append(TextArea(text.string, textprops=text.style.props))
-        childrens.append(HPacker(children=children, pad=0, sep=0, align="center"))
+        childrens.append(HPacker(children=children, pad=0, sep=0, align=va))
 
-    text_grid = VPacker(children=childrens, pad=0, sep=0, align=align)
+    text_grid = VPacker(children=childrens, pad=0, sep=0, align=ha)
     return text_grid

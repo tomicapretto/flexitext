@@ -29,6 +29,7 @@ class FlexiText:
         ha="left",
         va="center",
         ma="left",
+        mva="baseline",
         xycoords="axes fraction",
         ax=None,
     ):
@@ -50,6 +51,9 @@ class FlexiText:
             Alignment for multiline texts. The layout of the bounding box of all the lines is
             determined by the `ha` and `va` properties. This property controls the alignment of the
             text lines within that box.
+        mva: str
+            Vertical alignment for text within multiline texts. Can be one of `"top"`, `"bottom"`,
+            `"left"`, `"right"`, `"center"`, or `"baseline"`. Defaults to `"baseline"`.
         xycoords: str
             The coordinate system for `x` and `y`. Must be one of `'axes fraction'` or
             `'figure fraction'`.
@@ -73,7 +77,7 @@ class FlexiText:
                 f"'xycoords' must be one of 'axes fraction' or 'figure fraction', not {xycoords}"
             )
 
-        offsetbox = self._make_offset_box(ma)
+        offsetbox = self._make_offset_box(ma, mva)
         box_alignment = self._make_box_alignment(ha, va)
         annotation_box = AnnotationBbox(
             offsetbox,
@@ -93,12 +97,14 @@ class FlexiText:
         va = self.VERTICAL_ALIGNMENT[va]
         return (ha, va)
 
-    def _make_offset_box(self, align):
+    def _make_offset_box(self, mha, mva):
         """Create grid with formatted text"""
-        return make_text_grid(self.texts, align)
+        return make_text_grid(self.texts, mha, mva)
 
 
-def flexitext(x, y, s, ha="left", va="center", ma="left", xycoords="axes fraction", ax=None):
+def flexitext(
+    x, y, s, ha="left", va="center", ma="left", mva="baseline", xycoords="axes fraction", ax=None
+):
     """Draw text with multiple formats.
 
     Parameters
@@ -110,13 +116,15 @@ def flexitext(x, y, s, ha="left", va="center", ma="left", xycoords="axes fractio
         The vertical position to place the text. By default, this is in axes fraction
         coordinates.
     ha: str
-        Horizontal alignment. Must be one of 'center', 'right', or 'left'.
+        Horizontal alignment. Must be one of `'center'`, `'right'`, or `'left'`.
     va: str
-        Horizontal alignment. Must be one of 'center', 'top', or 'bottom'.
+        Horizontal alignment. Must be one of `'center'`, `'top'`, or `'bottom'`.
     ma: str
         Alignment for multiline texts. The layout of the bounding box of all the lines is
         determined by the `ha` and `va` properties. This property controls the alignment of the
         text lines within that box.
+    mva: str
+        Vertical alignment for lines within multiline texts. Defaults to `"baseline"`.
     xycoords: str
         The coordinate system for `x` and `y`. Must be one of `'axes fraction'` or
         `'figure fraction'`.
@@ -127,4 +135,4 @@ def flexitext(x, y, s, ha="left", va="center", ma="left", xycoords="axes fractio
     -------
     annotation_box: matplotlib.offsetbox.AnnotationBbox
     """
-    return FlexiText(*make_texts(s)).plot(x, y, ha, va, ma, xycoords, ax)
+    return FlexiText(*make_texts(s)).plot(x, y, ha, va, ma, mva, xycoords, ax)

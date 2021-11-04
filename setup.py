@@ -13,6 +13,7 @@ version_info = {}
 with open(VERSION_FILE) as version_file:
     exec(version_file.read(), version_info)
 
+
 def get_long_description():
     with codecs.open(README_FILE, "rt") as buff:
         return buff.read()
