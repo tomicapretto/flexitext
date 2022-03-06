@@ -24,3 +24,6 @@ def test_style():
     style = Style(**props)
     assert repr(style).count("\n") == len(props) + 1
     assert style != props
+
+    # This is always None, unless the user changes _backgroundcolor by hand.
+    assert style.backgroundcolor is None

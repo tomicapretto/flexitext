@@ -9,7 +9,7 @@ from flexitext import flexitext
 # These tests are quite poor for now
 def test_flexitext():
     text = "<color:green, alpha:0.3>a piece of text</>"
-    _, ax = plt.subplots()
+    _, _ = plt.subplots()
     box = flexitext(0.5, 0.5, text)
     assert isinstance(box, AnnotationBbox)
 

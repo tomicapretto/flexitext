@@ -28,7 +28,11 @@ def test_make_grid():
 
 def test_make_text_grid():
     style = Style(color="red")
-    texts = [Text("my\ntext", style), Text("other text\n", style), Text("and another one", style)]
+    texts = [
+        Text("my\ntext", style),
+        Text("other text\n", style),
+        Text("and another one", style),
+    ]
     text_grid = make_text_grid(texts)
 
     assert isinstance(text_grid, VPacker)
