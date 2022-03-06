@@ -4,6 +4,16 @@
 
 ### New features
 
+### Maintenance and fixes
+
+### Documentation
+
+### Deprecation
+
+### 0.2.0
+
+### New features
+
 * Add `mva` argument to `flexitext()` which controls the vertical alignment of individual texts within the outer text box (5da272172874fc89e54c4bf112a237dadb37062a).
 
 ### Maintenance and fixes
@@ -13,10 +23,6 @@
 * Numbers like X. are interpreted as X.0 floats (e.g. `1.`). Flexitext attempted to parse them as two numbers, resulting in an error (#9).
 * Add `Changelog.md` (#9).
 * Improved test coverage (#9).
-
-### Documentation
-
-### Deprecation
 
 ### 0.1.0
 

@@ -50,7 +50,8 @@ class Style:
     def backgroundcolor(self, value):
         self._backgroundcolor = None
         if value:
-            self.bbox = {"pad": 0.5, "lw": 0, "fc": value}
+            # NOTE: These could be configurable in the future
+            self.bbox = {"pad": 0, "lw": 0, "fc": value}
 
     def __eq__(self, other):
         if not isinstance(other, type(self)):
