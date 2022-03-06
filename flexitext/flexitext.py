@@ -103,7 +103,15 @@ class FlexiText:
 
 
 def flexitext(
-    x, y, s, ha="left", va="center", ma="left", mva="baseline", xycoords="axes fraction", ax=None
+    x,
+    y,
+    s,
+    ha="left",
+    va="center",
+    ma="left",
+    mva="baseline",
+    xycoords="axes fraction",
+    ax=None,
 ):
     """Draw text with multiple formats.
 

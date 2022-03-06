@@ -4,7 +4,7 @@ class Token:
         self.lexeme = lexeme
         self.literal = literal
 
-    def __repr__(self):
+    def __repr__(self):  # pragma: no cover
         string_list = [
             f"kind: {self.kind}",
             f"lexeme: {self.lexeme}",

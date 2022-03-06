@@ -13,10 +13,13 @@ class ArgScanner(Scanner):
         elif char == ",":
             self.add_token("COMMA")
         elif char == ".":
-            if self.peek().isdigit():
+            next_char = self.peek()
+            if next_char.isdigit():
                 self.floatnum()
+            elif next_char == "":  # pragma: no cover
+                raise ScanError("Unexpected EOF when declaring a number")
             else:
-                raise ScanError(f"Unexpected character: {char}")
+                raise ScanError(f"Unexpected character when declaring a number: {next_char}")
         elif char == ":":
             self.add_token("COLON")
         elif char.isdigit():
@@ -35,7 +38,8 @@ class ArgScanner(Scanner):
         is_float = False
         while self.peek().isdigit():
             self.advance()
-        if self.peek() == "." and self.peek_next().isdigit():
+        # Works with both 1. and 1.0 like numbers.
+        if self.peek() == ".":
             is_float = True
             self.advance()
             while self.peek().isdigit():
