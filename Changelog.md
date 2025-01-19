@@ -10,6 +10,21 @@
 
 ### Deprecation
 
+### 0.3.0
+
+### New features
+
+* Allow users to pass `xycoords="data"` to `flexitext()`.
+
+### Maintenance and fixes
+
+* Support Python 3.10, 3.11, and 3.12 in the tests.
+* Upgrade Black to `24.10.0` and Pylint to `3.3.3`.
+
+### Deprecation
+
+* Don't run tests for Python 3.7 and 3.8 anymore.
+
 ### 0.2.0
 
 ### New features
