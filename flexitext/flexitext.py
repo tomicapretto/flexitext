@@ -74,7 +74,8 @@ class FlexiText:
             xycoords = ax.figure.transFigure
         else:
             raise ValueError(
-                f"'xycoords' must be one of 'axes fraction' or 'figure fraction', not {xycoords}"
+                "'xycoords' must be one of 'data', 'axes fraction' or 'figure fraction', "
+                f"not {xycoords}"
             )
 
         offsetbox = self._make_offset_box(ma, mva)
