@@ -14,7 +14,7 @@ def make_grid(texts):
     grid: list
         A nested list with `Text` instances.
     """
-    row_n = sum([text.string.count("\n") for text in texts]) + 1
+    row_n = sum(text.string.count("\n") for text in texts) + 1
     grid = [[] for _ in range(row_n)]
     row_idx = 0
     for text in texts:
