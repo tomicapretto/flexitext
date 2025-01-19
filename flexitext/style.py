@@ -65,7 +65,7 @@ class Style:
     def __repr__(self):
         specs = [f"{k}={v}" for k, v in self.props.items()]
 
-        if sum([len(s) for s in specs]) < 100:
+        if sum(len(s) for s in specs) < 100:
             arg = ", ".join(specs)
         else:
             arg = spacify(multilinify(specs)) + "\n"
