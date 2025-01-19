@@ -18,3 +18,9 @@ def test_flexitext():
 
     with pytest.raises(ValueError):
         flexitext(0.5, 0.5, text, xycoords="other stuff")
+
+    # Test that xycoords="data" works
+    _, ax = plt.subplots()
+    ax.plot([10, 20], [50, 80])
+    text = "<color:blue, size:16>This is blue text</> and this is regular text"
+    flexitext(15, 60, text, ha="center", xycoords="data")
