@@ -1,6 +1,6 @@
 # Functional interface
 
-Flexitext provides the `flexitext()` function. With the exception of the formatted strings, it works in the same way than the `.text()` method on Matplotlib's `Axes` objects. You can see its full documentation [here](../../reference/flexitext).
+Flexitext provides the `flexitext()` function. With the exception of the formatted strings, it works in the same way than the `.text()` method on Matplotlib's `Axes` objects. You can see its full documentation [here](../reference/flexitext.md).
 
 ## Setup
 

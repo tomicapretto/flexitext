@@ -1,6 +1,6 @@
 # Object-Oriented Interface
 
-Flexitext provides the [`FlexiText()`](../../reference/FlexiText) class. This class is wrapped by the `flexitext()` function to provide the functional implementation. Unlike the functional implementation, this class based implementation does not work with formatted strings. It works with instances of the class `flexitext.Text`. These are lower level objects that contain both the text and the styles, given by an instance of `flexitext.Style`.
+Flexitext provides the [`FlexiText()`](../reference/FlexiText.md) class. This class is wrapped by the `flexitext()` function to provide the functional implementation. Unlike the functional implementation, this class based implementation does not work with formatted strings. It works with instances of the class `flexitext.Text`. These are lower level objects that contain both the text and the styles, given by an instance of `flexitext.Style`.
 
 
 ## Setup
