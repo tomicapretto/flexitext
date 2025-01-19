@@ -55,7 +55,7 @@ class FlexiText:
             Vertical alignment for text within multiline texts. Can be one of `"top"`, `"bottom"`,
             `"left"`, `"right"`, `"center"`, or `"baseline"`. Defaults to `"baseline"`.
         xycoords: str
-            The coordinate system for `x` and `y`. Must be one of `'axes fraction'` or
+            The coordinate system for `x` and `y`. Must be one of `'data'`, `'axes fraction'`, or
             `'figure fraction'`.
         ax: matplotlib.axes.Axes
             Matplotlib `Axes`. The default value means the `Axes` is obtained with `plt.gca()`
@@ -67,7 +67,7 @@ class FlexiText:
 
         if ax is None:
             ax = plt.gca()
-        if xycoords == "axes fraction":
+        if xycoords in ("axes fraction", "data"):
             parent = ax
         elif xycoords == "figure fraction":
             parent = ax.figure
