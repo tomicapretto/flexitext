@@ -514,30 +514,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="flexitext">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#flexitext.flexitext.flexitext--parameters" class="md-nav__link">
-    <span class="md-ellipsis">
-      Parameters
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#flexitext.flexitext.flexitext--returns" class="md-nav__link">
-    <span class="md-ellipsis">
-      Returns
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
     </ul>
@@ -647,31 +623,178 @@
     <div class="doc doc-contents first">
 
         <p>Draw text with multiple formats.</p>
-<h3 id="flexitext.flexitext.flexitext--parameters">Parameters<a class="headerlink" href="#flexitext.flexitext.flexitext--parameters" title="Permanent link">&para;</a></h3>
-<p>x: float
-    The horizontal position to place the text. By default, this is in axes fraction
-    coordinates.
-y: float
-    The vertical position to place the text. By default, this is in axes fraction
-    coordinates.
-ha: str
-    Horizontal alignment. Must be one of <code>'center'</code>, <code>'right'</code>, or <code>'left'</code>.
-va: str
-    Horizontal alignment. Must be one of <code>'center'</code>, <code>'top'</code>, or <code>'bottom'</code>.
-ma: str
-    Alignment for multiline texts. The layout of the bounding box of all the lines is
-    determined by the <code>ha</code> and <code>va</code> properties. This property controls the alignment of the
-    text lines within that box.
-mva: str
-    Vertical alignment for text within multiline texts. Can be one of <code>"top"</code>, <code>"bottom"</code>,
-    <code>"left"</code>, <code>"right"</code>, <code>"center"</code>, or <code>"baseline"</code>. Defaults to <code>"baseline"</code>.
-xycoords: str
-    The coordinate system for <code>x</code> and <code>y</code>. Must be one of <code>'axes fraction'</code> or
-    <code>'figure fraction'</code>.
-ax: matplotlib.axes.Axes
-    Matplotlib <code>Axes</code>. The default value means the <code>Axes</code> is obtained with <code>plt.gca()</code></p>
-<h3 id="flexitext.flexitext.flexitext--returns">Returns<a class="headerlink" href="#flexitext.flexitext.flexitext--returns" title="Permanent link">&para;</a></h3>
-<p>annotation_box: matplotlib.offsetbox.AnnotationBbox</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>x</code>
+            </td>
+            <td>
+                  <code>float</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The horizontal position to place the text. By default, this is in axes fraction
+coordinates.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>y</code>
+            </td>
+            <td>
+                  <code>float</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The vertical position to place the text. By default, this is in axes fraction
+coordinates.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>ha</code>
+            </td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Horizontal alignment. Must be one of <code>'center'</code>, <code>'right'</code>, or <code>'left'</code>.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;left&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>va</code>
+            </td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Horizontal alignment. Must be one of <code>'center'</code>, <code>'top'</code>, or <code>'bottom'</code>.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;center&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>ma</code>
+            </td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Alignment for multiline texts. The layout of the bounding box of all the lines is
+determined by the <code>ha</code> and <code>va</code> properties. This property controls the alignment of the
+text lines within that box.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;left&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>mva</code>
+            </td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Vertical alignment for text within multiline texts. Can be one of <code>"top"</code>, <code>"bottom"</code>,
+<code>"left"</code>, <code>"right"</code>, <code>"center"</code>, or <code>"baseline"</code>. Defaults to <code>"baseline"</code>.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;baseline&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>xycoords</code>
+            </td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The coordinate system for <code>x</code> and <code>y</code>. Must be one of <code>'axes fraction'</code> or
+<code>'figure fraction'</code>.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;axes fraction&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>ax</code>
+            </td>
+            <td>
+                  <code><span title="matplotlib.axes.Axes">Axes</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Matplotlib <code>Axes</code>. The default value means the <code>Axes</code> is obtained with <code>plt.gca()</code>.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>annotation_box</code></td>            <td>
+                  <code><span title="matplotlib.offsetbox.AnnotationBbox">AnnotationBbox</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
             <details class="quote">
               <summary>Source code in <code>flexitext/flexitext.py</code></summary>
@@ -732,32 +855,32 @@ ax: matplotlib.axes.Axes
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
-<span class="sd">    x: float</span>
+<span class="sd">    x : float</span>
 <span class="sd">        The horizontal position to place the text. By default, this is in axes fraction</span>
 <span class="sd">        coordinates.</span>
-<span class="sd">    y: float</span>
+<span class="sd">    y : float</span>
 <span class="sd">        The vertical position to place the text. By default, this is in axes fraction</span>
 <span class="sd">        coordinates.</span>
-<span class="sd">    ha: str</span>
+<span class="sd">    ha : str</span>
 <span class="sd">        Horizontal alignment. Must be one of `&#39;center&#39;`, `&#39;right&#39;`, or `&#39;left&#39;`.</span>
-<span class="sd">    va: str</span>
+<span class="sd">    va : str</span>
 <span class="sd">        Horizontal alignment. Must be one of `&#39;center&#39;`, `&#39;top&#39;`, or `&#39;bottom&#39;`.</span>
-<span class="sd">    ma: str</span>
+<span class="sd">    ma : str</span>
 <span class="sd">        Alignment for multiline texts. The layout of the bounding box of all the lines is</span>
 <span class="sd">        determined by the `ha` and `va` properties. This property controls the alignment of the</span>
 <span class="sd">        text lines within that box.</span>
-<span class="sd">    mva: str</span>
+<span class="sd">    mva : str</span>
 <span class="sd">        Vertical alignment for text within multiline texts. Can be one of `&quot;top&quot;`, `&quot;bottom&quot;`,</span>
 <span class="sd">        `&quot;left&quot;`, `&quot;right&quot;`, `&quot;center&quot;`, or `&quot;baseline&quot;`. Defaults to `&quot;baseline&quot;`.</span>
-<span class="sd">    xycoords: str</span>
+<span class="sd">    xycoords : str</span>
 <span class="sd">        The coordinate system for `x` and `y`. Must be one of `&#39;axes fraction&#39;` or</span>
 <span class="sd">        `&#39;figure fraction&#39;`.</span>
-<span class="sd">    ax: matplotlib.axes.Axes</span>
-<span class="sd">        Matplotlib `Axes`. The default value means the `Axes` is obtained with `plt.gca()`</span>
+<span class="sd">    ax : matplotlib.axes.Axes</span>
+<span class="sd">        Matplotlib `Axes`. The default value means the `Axes` is obtained with `plt.gca()`.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
-<span class="sd">    annotation_box: matplotlib.offsetbox.AnnotationBbox</span>
+<span class="sd">    annotation_box : matplotlib.offsetbox.AnnotationBbox</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">FlexiText</span><span class="p">(</span><span class="o">*</span><span class="n">make_texts</span><span class="p">(</span><span class="n">s</span><span class="p">))</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">ha</span><span class="p">,</span> <span class="n">va</span><span class="p">,</span> <span class="n">ma</span><span class="p">,</span> <span class="n">mva</span><span class="p">,</span> <span class="n">xycoords</span><span class="p">,</span> <span class="n">ax</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
