@@ -1,7 +1,8 @@
-from .flexitext import FlexiText, flexitext
+from importlib.metadata import version
 
+from .flexitext import FlexiText, flexitext
 from .style import Style
 
-from .version import __version__
+__version__ = version("flexitext")
 
 __all__ = ["flexitext", "FlexiText", "Style"]
