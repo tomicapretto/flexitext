@@ -10,6 +10,13 @@
 
 ### Deprecation
 
+### 0.4.0
+
+### Maintenance and fixes
+
+* Modernize package (#20)
+* Fix broken docstring display in documentatin website (#22)
+
 ### 0.3.0
 
 ### New features
