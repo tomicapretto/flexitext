@@ -16,7 +16,7 @@ jobs:
     name: Set up Python ${{ matrix.python-version }}
     steps:
       - name: Checkout source
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -39,7 +39,6 @@ jobs:
           python -m black -l 100 flexitext --check
           echo "Success!"
           echo "Checking code style with pylint..."
-          echo "Change"
           python -m pylint flexitext/
 
       - name: Run tests
