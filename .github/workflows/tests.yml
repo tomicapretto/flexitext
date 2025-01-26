@@ -39,6 +39,7 @@ jobs:
           python -m black -l 100 flexitext --check
           echo "Success!"
           echo "Checking code style with pylint..."
+          echo "Change"
           python -m pylint flexitext/
 
       - name: Run tests
