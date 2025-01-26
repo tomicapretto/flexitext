@@ -1,3 +1,43 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = ["setuptools>=61.0", "setuptools_scm>=8"]
+
+[tool.setuptools_scm]
+
+
+[project]
+name = "flexitext"
+description = "Draw styled text in Matplotlib"
+requires-python = ">=3.6"
+dependencies = ["matplotlib>=3.4"]
+readme = "README.md"
+license = {file = "LICENSE"}
+dynamic = ["version"]
+maintainers = [{ name = "Tomás Capretto", email = "tomicapretto@gmail.com" }]
+classifiers = ["Framework :: Matplotlib"]
+
+[project.optional-dependencies]
+dev = [
+    "black==24.10.0",
+    "pylint==3.3.3",
+    "pytest-cov>=2.6.1",
+    "pytest>=4.4.0",
+]
+
+
+[project.urls]
+homepage = "https://tomicapretto.com/flexitext"
+documentation = "https://tomicapretto.com/flexitext"
+repository = "https://github.com/tomicapretto/flexitext"
+changelog = "https://github.com/tomicapretto/flexitext/blob/main/CHANGELOG.md"
+
+
+[tool.setuptools]
+packages = ["flexitext"]
+
+[tool.setuptools.package-data]
+"*" = ["*.txt", "*.md"]
+
 [tool.black]
 line-length = 100
-target-version = ["py310"]
+target-version = ["py311"]

@@ -15,28 +15,24 @@ jobs:
 
     name: Set up Python ${{ matrix.python-version }}
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout source
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Set up Python ${{ matrix.python-version }}
-        uses: conda-incubator/setup-miniconda@v2
+        uses: actions/setup-python@v4
         with:
-          channels: conda-forge,defaults
-          channel-priority: true
           python-version: ${{ matrix.python-version }}
-          auto-update-conda: true
 
       - name: Install dev environment & flexitext
         shell: bash -l {0}
         run: |
-          conda install pip
-          pip install -r requirements.txt
-          pip install -r requirements-dev.txt
+          python -m pip install --upgrade pip
           pip install .
-          python --version
-          conda list
+          pip install .[dev]
           pip freeze
+
       - name: Run linters
         shell: bash -l {0}
         run: |
@@ -44,6 +40,7 @@ jobs:
           echo "Success!"
           echo "Checking code style with pylint..."
           python -m pylint flexitext/
+
       - name: Run tests
         shell: bash -l {0}
         run: |
