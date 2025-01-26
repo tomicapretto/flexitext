@@ -26,6 +26,5 @@ jobs:
           python --version
           pip install mkdocs-material
           pip install mkdocstrings[python]
-          pip install pytkdocs[numpy-style]
           cd docsite
           mkdocs gh-deploy --force
