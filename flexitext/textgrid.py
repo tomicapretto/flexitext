@@ -11,7 +11,7 @@ def make_grid(texts):
 
     Returns
     -------
-    grid: list
+    grid : list
         A nested list with `Text` instances.
     """
     row_n = sum(text.string.count("\n") for text in texts) + 1
@@ -37,20 +37,20 @@ def make_text_grid(texts, ha="left", va="baseline"):
 
     Parameters
     ----------
-    texts: tuple of flexitext.Text instances
+    texts : tuple of flexitext.Text instances
         These objects represent the text together with their styles.
-    ha: str
+    ha : str
         Horizontal alignment for multiline texts. This alignment is applied to the `VPacker`
         instance. Can be one of `"top"`, `"bottom"`, `"left"`, `"right"`, `"center"`, or
         `"baseline"`. Defaults to `"left"`
-    va: str
+    va : str
         Vertical alignment for multiline texts within the text area. This alignment is applied
         to `HPacker`. Can be one of `"top"`, `"bottom"`, `"left"`, `"right"`, `"center"`, or
         `"baseline"`. Defaults to `"baseline"`.
 
     Returns
     -------
-    text_grid: VPacker
+    text_grid : VPacker
     """
     grid = make_grid(texts)
     childrens = []

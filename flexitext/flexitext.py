@@ -12,7 +12,7 @@ class FlexiText:
     Parameters
     ----------
 
-    texts: tuple or list of flexitext.Text instances
+    texts : tuple or list of flexitext.Text instances
         These objects represent the text together with their styles.
     """
 
@@ -37,32 +37,32 @@ class FlexiText:
 
         Parameters
         ----------
-        x: float
+        x : float
             The horizontal position to place the text. By default, this is in axes fraction
             coordinates.
-        y: float
+        y : float
             The vertical position to place the text. By default, this is in axes fraction
             coordinates.
-        ha: str
+        ha : str
             Horizontal alignment. Must be one of `'center'`, `'right'`, or `'left'`.
-        va: str
+        va : str
             Horizontal alignment. Must be one of `'center'`, `'top'`, or `'bottom'`.
-        ma: str
+        ma : str
             Alignment for multiline texts. The layout of the bounding box of all the lines is
             determined by the `ha` and `va` properties. This property controls the alignment of the
             text lines within that box.
-        mva: str
+        mva : str
             Vertical alignment for text within multiline texts. Can be one of `"top"`, `"bottom"`,
             `"left"`, `"right"`, `"center"`, or `"baseline"`. Defaults to `"baseline"`.
-        xycoords: str
+        xycoords : str
             The coordinate system for `x` and `y`. Must be one of `'data'`, `'axes fraction'`, or
             `'figure fraction'`.
-        ax: matplotlib.axes.Axes
+        ax : matplotlib.axes.Axes
             Matplotlib `Axes`. The default value means the `Axes` is obtained with `plt.gca()`
 
         Returns
         -------
-        annotation_box: matplotlib.offsetbox.AnnotationBbox
+        annotation_box : matplotlib.offsetbox.AnnotationBbox
         """
 
         if ax is None:
@@ -93,7 +93,7 @@ class FlexiText:
         return annotation_box
 
     def _make_box_alignment(self, ha, va):
-        """Convert ha and va to a touple of two numbers"""
+        """Convert `ha` and `va` to a touple of two numbers"""
         ha = self.HORIZONTAL_ALIGNMENT[ha]
         va = self.VERTICAL_ALIGNMENT[va]
         return (ha, va)
@@ -118,31 +118,31 @@ def flexitext(
 
     Parameters
     ----------
-    x: float
+    x : float
         The horizontal position to place the text. By default, this is in axes fraction
         coordinates.
-    y: float
+    y : float
         The vertical position to place the text. By default, this is in axes fraction
         coordinates.
-    ha: str
+    ha : str
         Horizontal alignment. Must be one of `'center'`, `'right'`, or `'left'`.
-    va: str
+    va : str
         Horizontal alignment. Must be one of `'center'`, `'top'`, or `'bottom'`.
-    ma: str
+    ma : str
         Alignment for multiline texts. The layout of the bounding box of all the lines is
         determined by the `ha` and `va` properties. This property controls the alignment of the
         text lines within that box.
-    mva: str
+    mva : str
         Vertical alignment for text within multiline texts. Can be one of `"top"`, `"bottom"`,
         `"left"`, `"right"`, `"center"`, or `"baseline"`. Defaults to `"baseline"`.
-    xycoords: str
+    xycoords : str
         The coordinate system for `x` and `y`. Must be one of `'axes fraction'` or
         `'figure fraction'`.
-    ax: matplotlib.axes.Axes
-        Matplotlib `Axes`. The default value means the `Axes` is obtained with `plt.gca()`
+    ax : matplotlib.axes.Axes
+        Matplotlib `Axes`. The default value means the `Axes` is obtained with `plt.gca()`.
 
     Returns
     -------
-    annotation_box: matplotlib.offsetbox.AnnotationBbox
+    annotation_box : matplotlib.offsetbox.AnnotationBbox
     """
     return FlexiText(*make_texts(s)).plot(x, y, ha, va, ma, mva, xycoords, ax)
